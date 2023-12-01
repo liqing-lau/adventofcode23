@@ -4,28 +4,16 @@ import java.util.Scanner;
 
 public class day1 {
 
-    static int read_file_part_1(File filename) { 
+    static int read_file(File filename, String function) { 
         try {
             int total = 0;
             Scanner scanner = new Scanner(filename);
             while (scanner.hasNextLine()) {
-                total += get_digits_part_1(scanner.nextLine());
-            }
-            scanner.close();
-            return total;
-
-        } catch (FileNotFoundException e) {
-            System.out.println("An error has occured");
-            return 0;
-        }
-    }
-
-    static int read_file_part_2(File filename) { 
-        try {
-            int total = 0;
-            Scanner scanner = new Scanner(filename);
-            while (scanner.hasNextLine()) {
-                total += get_digits_part_2(scanner.nextLine());
+                if (function == "part_1") {
+                    total += get_digits_part_1(scanner.nextLine());
+                } else {
+                    total += get_digits_part_2(scanner.nextLine());
+                }
             }
             scanner.close();
             return total;
@@ -71,9 +59,9 @@ public class day1 {
 
     public static void main(String[] args) {
         System.out.print("part1=");
-        System.out.println(read_file_part_1(new File("inputData.txt")));
+        System.out.println(read_file(new File("inputData.txt"), "part_1"));
         System.out.print("part2=");
-        System.out.println(read_file_part_2(new File("inputData.txt")));
+        System.out.println(read_file(new File("inputData.txt"), "part_2"));
 
     }
 }
