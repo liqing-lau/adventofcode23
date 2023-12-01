@@ -1,5 +1,3 @@
-import time
-
 def read_file(filename): 
     result1 = 0
     result2 = 0 
@@ -23,11 +21,8 @@ def get_digits_part_1(string):
     return int(num)
 
 def get_digits_part_2(string): 
-    num = ''
-    
     for key, value in num_dic.items(): 
         string = string.replace(key, value)
-    
     return get_digits_part_1(string)
 
 # caters for situations such as 'oneight' which is 18
