@@ -1,3 +1,5 @@
+import time
+
 def read_file(filename): 
     result1 = 0
     result2 = 0 
@@ -39,6 +41,6 @@ num_dic = { 'one': 'o1e',
             'eight': 'e8t',
             'nine': 'n9e'}
 
-part1, part2 = read_file('part1.txt')
+part1, part2 = read_file('inputData.txt')
 print(f'{part1=}')
 print(f'{part2=}')
